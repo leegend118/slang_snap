@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Zoomer Mode | Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="zoomer-mode h-full flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-black bg-opacity-80 h-7 flex justify-center items-center">
+        <div class="text-white text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Quiz Header -->
+    <div class="p-4 flex justify-between items-center">
+        <button class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+            <i class="fas fa-times text-white"></i>
+        </button>
+        <div class="flex items-center">
+            <div class="mr-3 bg-white bg-opacity-20 px-3 py-1 rounded-full flex items-center">
+                <i class="fas fa-bolt text-yellow-400 mr-1"></i>
+                <span class="text-white text-sm font-medium">25</span>
+            </div>
+            <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full flex items-center">
+                <i class="fas fa-heart text-red-400 mr-1"></i>
+                <span class="text-white text-sm font-medium">3</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="px-4 mb-2">
+        <div class="flex justify-between text-xs text-white mb-1">
+            <span>Question 3 of 5</span>
+            <span>Social Media Pack</span>
+        </div>
+        <div class="grid grid-cols-5 gap-1">
+            <div class="h-1 bg-pink-500 rounded-full"></div>
+            <div class="h-1 bg-pink-500 rounded-full"></div>
+            <div class="h-1 bg-white bg-opacity-50 rounded-full"></div>
+            <div class="h-1 bg-white bg-opacity-20 rounded-full"></div>
+            <div class="h-1 bg-white bg-opacity-20 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Quiz Content -->
+    <div class="flex-1 px-4 pb-20">
+        <!-- Question -->
+        <div class="bg-gray-900 rounded-xl p-5 mb-6 shadow-lg border border-purple-900">
+            <div class="text-center mb-6">
+                <h2 class="text-xl font-bold text-white mb-1">What does "no cap" mean?</h2>
+                <p class="text-sm text-white text-opacity-70">Choose the correct answer</p>
+            </div>
+            
+            <div class="space-y-3 mb-3">
+                <div class="bg-white bg-opacity-10 p-3 rounded-lg border border-white border-opacity-10 hover:bg-opacity-20 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full border border-white border-opacity-30 flex items-center justify-center mr-3">
+                            <span class="text-white">A</span>
+                        </div>
+                        <span class="text-white">No hat allowed</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-3 rounded-lg border border-white border-opacity-10 hover:bg-opacity-20 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full border border-white border-opacity-30 flex items-center justify-center mr-3">
+                            <span class="text-white">B</span>
+                        </div>
+                        <span class="text-white">No limits</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-3 rounded-lg border border-pink-400 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-3">
+                            <span class="text-white">C</span>
+                        </div>
+                        <span class="text-white font-medium">No lie, telling the truth</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-3 rounded-lg border border-white border-opacity-10 hover:bg-opacity-20 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full border border-white border-opacity-30 flex items-center justify-center mr-3">
+                            <span class="text-white">D</span>
+                        </div>
+                        <span class="text-white">Not caring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Usage -->
+        <div class="bg-gradient-to-r from-purple-800 to-indigo-900 rounded-xl p-4 mb-4 shadow-lg">
+            <div class="flex items-start mb-3">
+                <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-lg mr-3 mt-1">
+                    💯
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Example</h3>
+                    <p class="text-sm text-white text-opacity-80">"This party is lit, <span class="text-pink-400 font-bold">no cap</span>!"</p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center">
+                <button class="bg-white bg-opacity-20 text-white text-sm py-2 px-3 rounded-lg">
+                    <i class="fas fa-volume-up mr-2"></i>
+                    Play Audio
+                </button>
+                <button class="bg-white bg-opacity-20 text-white text-sm py-2 px-3 rounded-lg">
+                    <i class="fas fa-video mr-2"></i>
+                    Watch Clip
+                </button>
+            </div>
+        </div>
+
+        <!-- Answer Result - Only show after selection -->
+        <div class="bg-green-900 bg-opacity-40 rounded-xl p-4 border border-green-500 mb-6">
+            <div class="flex items-center mb-2">
+                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-check text-white"></i>
+                </div>
+                <h3 class="text-lg font-bold text-green-400">Correct!</h3>
+            </div>
+            <p class="text-white text-sm mb-3">"No cap" means "no lie" or "for real" - it's used to emphasize that someone is telling the truth.</p>
+            <div class="flex justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-fire text-yellow-400 mr-1"></i>
+                    <span class="text-white text-sm">Perfect streak!</span>
+                </div>
+                <span class="text-green-400 font-medium">+15 points</span>
+            </div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="flex space-x-3">
+            <button class="flex-1 bg-white bg-opacity-10 text-white py-3 rounded-xl font-medium text-lg">
+                Skip
+            </button>
+            <button class="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-xl font-medium text-lg">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <!-- Power-ups Bar -->
+    <div class="fixed bottom-5 left-0 right-0 px-4 flex justify-center space-x-4">
+        <button class="w-12 h-12 rounded-full bg-gray-800 border border-purple-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-lightbulb text-yellow-400"></i>
+        </button>
+        <button class="w-12 h-12 rounded-full bg-gray-800 border border-pink-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-eraser text-blue-400"></i>
+        </button>
+        <button class="w-12 h-12 rounded-full bg-gray-800 border border-indigo-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-undo text-green-400"></i>
+        </button>
+    </div>
+</body>
+</html>

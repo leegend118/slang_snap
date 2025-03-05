@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Slang Snap | Choose Your Style</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111827;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .mode-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .zoomer-gradient {
+            background-image: linear-gradient(135deg, #f02fc2 0%, #6094ea 100%);
+        }
+        
+        .classic-gradient {
+            background-image: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+        
+        .logo-text {
+            font-family: 'Righteous', cursive;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .logo-text .snap-text {
+            font-family: 'Permanent Marker', cursive;
+        }
+        
+        .glitch-text {
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            animation: glitch 500ms infinite;
+        }
+        
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            }
+            14% {
+                text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75);
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75);
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75);
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75);
+            }
+            100% {
+                text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75);
+            }
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-black bg-opacity-80 h-7 flex justify-center items-center">
+        <div class="text-white text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col justify-center items-center p-6">
+        <!-- Logo -->
+        <div class="mb-8 text-center">
+            <h1 class="text-5xl font-extrabold text-white logo-text mb-2">
+                <span class="glitch-text">Slang</span> 
+                <span class="snap-text text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">Snap</span>
+            </h1>
+            <p class="text-gray-300">Language learning with style</p>
+        </div>
+        
+        <!-- Style Selection -->
+        <div class="w-full max-w-md">
+            <h2 class="text-xl font-semibold text-white mb-4 text-center">Choose Your Style</h2>
+            
+            <!-- Zoomer Mode Card -->
+            <a href="home-zoomer.html" class="block mb-5">
+                <div class="mode-card rounded-xl overflow-hidden shadow-lg border border-purple-800">
+                    <div class="zoomer-gradient p-4 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-1">Zoomer Mode</h3>
+                        <p class="text-white text-opacity-90 text-sm">Modern slang, vibrant design</p>
+                    </div>
+                    <div class="bg-gray-900 p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-lg mr-2">
+                                    🔥
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white">Social Media Slang</h4>
+                                    <p class="text-xs text-gray-400">For the chronically online</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                        
+                        <!-- Zoomer Features -->
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="bg-gray-800 bg-opacity-50 p-2 rounded-md flex items-center">
+                                <i class="fas fa-fire text-pink-400 mr-2"></i>
+                                <span class="text-white">Trending phrases</span>
+                            </div>
+                            <div class="bg-gray-800 bg-opacity-50 p-2 rounded-md flex items-center">
+                                <i class="fas fa-gamepad text-purple-400 mr-2"></i>
+                                <span class="text-white">Gaming slang</span>
+                            </div>
+                            <div class="bg-gray-800 bg-opacity-50 p-2 rounded-md flex items-center">
+                                <i class="fas fa-music text-pink-400 mr-2"></i>
+                                <span class="text-white">Music references</span>
+                            </div>
+                            <div class="bg-gray-800 bg-opacity-50 p-2 rounded-md flex items-center">
+                                <i class="fas fa-hashtag text-purple-400 mr-2"></i>
+                                <span class="text-white">Internet culture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Classic Mode Card -->
+            <a href="home-classic.html" class="block">
+                <div class="mode-card rounded-xl overflow-hidden shadow-lg border border-blue-800">
+                    <div class="classic-gradient p-4 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-1">Classic Mode</h3>
+                        <p class="text-white text-opacity-90 text-sm">Professional idioms, clean design</p>
+                    </div>
+                    <div class="bg-white p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg mr-2">
+                                    💼
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Business Idioms</h4>
+                                    <p class="text-xs text-gray-500">For professional settings</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                        
+                        <!-- Classic Features -->
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="bg-gray-100 p-2 rounded-md flex items-center">
+                                <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Professional terms</span>
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded-md flex items-center">
+                                <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Academic idioms</span>
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded-md flex items-center">
+                                <i class="fas fa-comments text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Formal expressions</span>
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded-md flex items-center">
+                                <i class="fas fa-handshake text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Business etiquette</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Already Have an Account -->
+        <div class="mt-8 text-center">
+            <p class="text-gray-400 text-sm mb-2">Already have an account?</p>
+            <a href="welcome.html" class="text-blue-400 font-medium">Sign In</a>
+        </div>
+    </div>
+</body>
+</html>

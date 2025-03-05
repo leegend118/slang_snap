@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idiom Library - Classic Mode | Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="classic-mode h-full flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-gray-50 h-7 flex justify-center items-center border-b border-gray-200">
+        <div class="text-gray-900 text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Header -->
+    <div class="bg-white p-3 flex justify-between items-center shadow-sm border-b border-gray-100">
+        <div class="text-gray-800 font-medium">Idiom Library</div>
+        <div class="flex items-center space-x-2">
+            <button class="w-8 h-8 flex items-center justify-center text-gray-600">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="w-8 h-8 flex items-center justify-center text-gray-600">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="p-3 bg-white border-b border-gray-100">
+        <div class="flex overflow-x-auto space-x-2 pb-1">
+            <button class="px-4 py-1 bg-blue-600 text-white rounded-md text-sm font-medium whitespace-nowrap">
+                All Idioms
+            </button>
+            <button class="px-4 py-1 bg-gray-100 text-gray-700 rounded-md text-sm whitespace-nowrap">
+                Favorites
+            </button>
+            <button class="px-4 py-1 bg-gray-100 text-gray-700 rounded-md text-sm whitespace-nowrap">
+                Recently Learned
+            </button>
+            <button class="px-4 py-1 bg-gray-100 text-gray-700 rounded-md text-sm whitespace-nowrap">
+                Need Review
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 overflow-y-auto pb-20">
+        <!-- Stats Summary -->
+        <div class="p-4 bg-blue-50 mb-4 border-b border-blue-100">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="border-r border-gray-200 text-center">
+                        <span class="block text-xl font-bold text-blue-700">412</span>
+                        <span class="text-xs text-gray-600">Total Idioms</span>
+                    </div>
+                    <div class="border-r border-gray-200 text-center">
+                        <span class="block text-xl font-bold text-blue-700">82%</span>
+                        <span class="text-xs text-gray-600">Mastery Level</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-xl font-bold text-blue-700">35</span>
+                        <span class="text-xs text-gray-600">Bookmarked</span>
+                    </div>
+                </div>
+                <button class="w-full bg-blue-600 text-white text-sm font-medium py-2 rounded">
+                    Review Needs Practice
+                </button>
+            </div>
+        </div>
+        
+        <!-- Categories -->
+        <div class="px-4 mb-6">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class="text-lg font-semibold text-gray-800">Categories</h2>
+                <a href="#" class="text-blue-600 text-sm">View All</a>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 mb-1">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex items-center">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        💼
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Business</h3>
+                        <p class="text-xs text-gray-500">42 idioms</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex items-center">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🏠
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Daily Life</h3>
+                        <p class="text-xs text-gray-500">38 idioms</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex items-center">
+                    <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🎓
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Academic</h3>
+                        <p class="text-xs text-gray-500">25 idioms</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex items-center">
+                    <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        💬
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Social</h3>
+                        <p class="text-xs text-gray-500">31 idioms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recently Learned -->
+        <div class="mb-6">
+            <div class="px-4 flex justify-between items-center mb-2">
+                <h2 class="text-lg font-semibold text-gray-800">Recently Learned</h2>
+                <a href="#" class="text-blue-600 text-sm">View All</a>
+            </div>
+            
+            <div class="divide-y divide-gray-100 border-t border-b border-gray-100">
+                <div class="bg-white p-4 flex items-center">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🎯
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-gray-800">on the ball</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-bookmark text-blue-600 mr-1"></i>
+                                <span class="text-xs text-gray-500">100%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">Alert, attentive, and efficient</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 flex items-center">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🧠
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-gray-800">food for thought</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-bookmark text-blue-600 mr-1"></i>
+                                <span class="text-xs text-gray-500">95%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">Something worth thinking about</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 flex items-center">
+                    <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🔍
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-gray-800">read between the lines</h3>
+                            <div class="flex items-center">
+                                <i class="far fa-bookmark text-gray-400 mr-1"></i>
+                                <span class="text-xs text-gray-500">85%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">Understand what is implied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Needs Practice -->
+        <div class="px-4 mb-4">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class="text-lg font-semibold text-gray-800">Needs Practice</h2>
+                <a href="#" class="text-blue-600 text-sm">View All</a>
+            </div>
+            
+            <div class="space-y-3">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex items-center">
+                    <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🔄
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-gray-800">hit the nail on the head</h3>
+                            <div class="flex items-center">
+                                <i class="far fa-bookmark text-gray-400 mr-1"></i>
+                                <span class="text-xs text-gray-500">55%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">To describe exactly what is causing a situation</p>
+                    </div>
+                    <div class="ml-2">
+                        <button class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm">
+                            <i class="fas fa-play text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex items-center">
+                    <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-lg mr-3">
+                        🔄
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-gray-800">a piece of cake</h3>
+                            <div class="flex items-center">
+                                <i class="far fa-bookmark text-gray-400 mr-1"></i>
+                                <span class="text-xs text-gray-500">60%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">Something very easy to do</p>
+                    </div>
+                    <div class="ml-2">
+                        <button class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm">
+                            <i class="fas fa-play text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-play"></i>
+            <span>Learn</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-microphone"></i>
+            <span>Voice</span>
+        </div>
+        <div class="tab-item active">
+            <i class="fas fa-book"></i>
+            <span>Library</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </div>
+</body>
+</html>

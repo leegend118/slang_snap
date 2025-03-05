@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #111827, #1f2937);
+        }
+        
+        .logo-text {
+            font-family: 'Righteous', cursive;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .logo-text .snap-text {
+            font-family: 'Permanent Marker', cursive;
+        }
+        
+        .glitch-text {
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            animation: glitch 500ms infinite;
+        }
+        
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            }
+            14% {
+                text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75);
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75);
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75);
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75);
+            }
+            100% {
+                text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75);
+            }
+        }
+        
+        .slide-dots .dot {
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            margin: 0 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-dots .dot.active {
+            width: 20px;
+            border-radius: 4px;
+            background-color: white;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-black bg-opacity-80 h-7 flex justify-center items-center">
+        <div class="text-white text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+        <!-- Logo Area -->
+        <div class="pt-10 pb-6 text-center">
+            <h1 class="text-5xl font-extrabold text-white logo-text mb-1">
+                <span class="glitch-text">Slang</span> 
+                <span class="snap-text text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">Snap</span>
+            </h1>
+            <p class="text-gray-300">Master idioms & slang in style</p>
+        </div>
+        
+        <!-- Illustration -->
+        <div class="px-6 pb-8 flex justify-center">
+            <div class="w-64 h-64 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center relative">
+                <div class="absolute inset-0 rounded-full overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                </div>
+                <div class="text-8xl animate-bounce">🎯</div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="px-6 mb-8">
+            <div class="grid grid-cols-2 gap-3">
+                <div class="feature-card rounded-xl p-3 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-xl mb-2">
+                        🎮
+                    </div>
+                    <h3 class="text-white font-medium mb-1">Gamified Learning</h3>
+                    <p class="text-gray-300 text-xs">Learn with fun challenges & rewards</p>
+                </div>
+                <div class="feature-card rounded-xl p-3 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-xl mb-2">
+                        🎯
+                    </div>
+                    <h3 class="text-white font-medium mb-1">Contextual Examples</h3>
+                    <p class="text-gray-300 text-xs">See slang used in real situations</p>
+                </div>
+                <div class="feature-card rounded-xl p-3 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-xl mb-2">
+                        🎤
+                    </div>
+                    <h3 class="text-white font-medium mb-1">Voice Practice</h3>
+                    <p class="text-gray-300 text-xs">Record & improve pronunciation</p>
+                </div>
+                <div class="feature-card rounded-xl p-3 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-xl mb-2">
+                        👤
+                    </div>
+                    <h3 class="text-white font-medium mb-1">Pick Your Style</h3>
+                    <p class="text-gray-300 text-xs">Modern slang or classic idioms</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Indicators -->
+        <div class="flex justify-center slide-dots mb-8">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="px-8 pb-10">
+            <a href="style-picker.html" class="block mb-3">
+                <button class="w-full bg-gradient-to-r from-pink-500 to-blue-600 text-white py-3 rounded-lg font-medium text-lg">
+                    Get Started
+                </button>
+            </a>
+            <div class="text-center">
+                <a href="#" class="text-gray-300 text-sm">Already have an account? <span class="text-white font-medium">Sign In</span></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

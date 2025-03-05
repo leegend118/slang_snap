@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+    <style>
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #3b82f6;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(22px);
+        }
+        
+        .segment-control {
+            display: flex;
+            background-color: #f3f4f6;
+            border-radius: 9999px;
+            padding: 2px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .segment-option {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            z-index: 1;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            color: #6b7280;
+        }
+        
+        .segment-slider {
+            position: absolute;
+            height: 80%;
+            width: 50%;
+            background: #3b82f6;
+            border-radius: 9999px;
+            top: 10%;
+            left: 1%;
+            transition: transform 0.3s ease;
+        }
+        
+        .segment-active {
+            transform: translateX(98%);
+        }
+    </style>
+</head>
+<body class="classic-mode h-full flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-gray-50 h-7 flex justify-center items-center border-b border-gray-200">
+        <div class="text-gray-900 text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Header -->
+    <div class="bg-white p-4 flex justify-between items-center border-b border-gray-200">
+        <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+            <i class="fas fa-arrow-left text-gray-600"></i>
+        </button>
+        <div class="text-xl font-bold text-gray-800">Settings</div>
+        <div class="w-10 h-10"></div> <!-- Empty div for space balance -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-4 overflow-y-auto bg-gray-50">
+        <!-- App Mode Section -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">App Mode</h2>
+            
+            <div class="bg-white rounded-lg p-4 mb-3 shadow-sm border border-gray-200">
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Current Style</h3>
+                        <p class="text-gray-600 text-sm">Switch between app styles</p>
+                    </div>
+                </div>
+                
+                <div class="segment-control">
+                    <div class="segment-slider segment-active"></div>
+                    <button id="zoomerBtn" class="segment-option">Zoomer</button>
+                    <button id="classicBtn" class="segment-option text-white">Classic</button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Dark Mode</h3>
+                        <p class="text-gray-600 text-sm">Toggle between light & dark mode</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Animations</h3>
+                        <p class="text-gray-600 text-sm">Enable/disable animations</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Account Section -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Account</h2>
+            
+            <div class="bg-white rounded-lg mb-3 shadow-sm border border-gray-200">
+                <div class="p-4 flex items-center border-b border-gray-200">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-3">
+                        <img src="https://i.pravatar.cc/100?img=59" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-gray-800 font-medium">Robert Smith</h3>
+                        <p class="text-gray-600 text-sm">robert.smith@example.com</p>
+                    </div>
+                    <button class="text-blue-600">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="p-4 flex justify-between items-center border-b border-gray-200">
+                    <div>
+                        <h3 class="text-gray-800 font-medium">Change Password</h3>
+                    </div>
+                    <button class="text-blue-600">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-gray-800 font-medium">Notifications</h3>
+                    </div>
+                    <button class="text-blue-600">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 flex items-center justify-between border-b border-gray-200">
+                    <h3 class="text-gray-800 font-medium">Language</h3>
+                    <div class="flex items-center">
+                        <span class="text-gray-600 mr-2">English (US)</span>
+                        <button class="text-blue-600">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="p-4 flex items-center justify-between">
+                    <h3 class="text-gray-800 font-medium">Storage Used</h3>
+                    <div class="flex items-center">
+                        <span class="text-gray-600 mr-2">28.4 MB</span>
+                        <button class="text-blue-600">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- App Settings Section -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Learning Settings</h2>
+            
+            <div class="bg-white rounded-lg p-4 mb-3 shadow-sm border border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Daily Goal</h3>
+                        <p class="text-gray-600 text-sm">Set your daily learning target</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-gray-600 mr-2">15 min</span>
+                        <button class="text-blue-600">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Daily Reminder</h3>
+                        <p class="text-gray-600 text-sm">Remind me to practice daily</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Word Difficulty</h3>
+                        <p class="text-gray-600 text-sm">Set your preferred difficulty level</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-gray-600 mr-2">Medium</span>
+                        <button class="text-blue-600">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-gray-800 font-medium mb-1">Audio Examples</h3>
+                        <p class="text-gray-600 text-sm">Auto-play audio examples</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Other Section -->
+        <div class="mb-10">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Other</h2>
+            
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 flex justify-between items-center border-b border-gray-200">
+                    <h3 class="text-gray-800 font-medium">Help & Support</h3>
+                    <button class="text-blue-600">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="p-4 flex justify-between items-center border-b border-gray-200">
+                    <h3 class="text-gray-800 font-medium">About Slang Snap</h3>
+                    <button class="text-blue-600">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="p-4 flex justify-between items-center border-b border-gray-200">
+                    <h3 class="text-gray-800 font-medium">Privacy Policy</h3>
+                    <button class="text-blue-600">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="p-4">
+                    <button class="text-red-600 font-medium">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-play"></i>
+            <span>Learn</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-microphone"></i>
+            <span>Voice</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-book"></i>
+            <span>Library</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </div>
+
+    <!-- Toggle between Zoomer/Classic mode -->
+    <script>
+        const zoomerBtn = document.getElementById('zoomerBtn');
+        const classicBtn = document.getElementById('classicBtn');
+        const segmentSlider = document.querySelector('.segment-slider');
+        
+        zoomerBtn.addEventListener('click', function() {
+            segmentSlider.classList.remove('segment-active');
+        });
+        
+        classicBtn.addEventListener('click', function() {
+            segmentSlider.classList.add('segment-active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player - Zoomer Mode | Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="zoomer-mode h-full flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-black bg-opacity-80 h-7 flex justify-center items-center">
+        <div class="text-white text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Video Player -->
+    <div class="video-container bg-black relative flex-1">
+        <!-- Video Placeholder -->
+        <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Video Thumbnail -->
+            <img src="https://images.unsplash.com/photo-1601926638164-72eb3899ed88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Video Preview" class="w-full h-full object-cover absolute inset-0">
+            
+            <!-- Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <button class="w-20 h-20 bg-pink-500 bg-opacity-80 rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition">
+                    <i class="fas fa-play text-3xl text-white"></i>
+                </button>
+            </div>
+            
+            <!-- Word Highlight -->
+            <div class="absolute bottom-28 left-0 right-0 text-center">
+                <div class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xl font-bold px-6 py-3 rounded-full shadow-lg transform -rotate-2">
+                    serving
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Controls -->
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+            <!-- Progress Bar -->
+            <div class="mb-4">
+                <div class="h-1 bg-white bg-opacity-30 rounded-full overflow-hidden">
+                    <div class="h-1 bg-pink-500 rounded-full" style="width: 45%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-white mt-1">
+                    <span>0:07</span>
+                    <span>0:15</span>
+                </div>
+            </div>
+            
+            <!-- Control Buttons -->
+            <div class="flex items-center justify-between">
+                <button class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <i class="fas fa-backward text-white"></i>
+                </button>
+                <button class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <i class="fas fa-pause text-white text-xl"></i>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <i class="fas fa-forward text-white"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Top Navigation -->
+        <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-center">
+            <button class="w-10 h-10 rounded-full bg-black bg-opacity-50 flex items-center justify-center">
+                <i class="fas fa-arrow-left text-white"></i>
+            </button>
+            <div class="flex space-x-2">
+                <button class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs text-white flex items-center">
+                    <i class="fas fa-fire text-pink-400 mr-1"></i> 3/10
+                </button>
+                <button class="w-10 h-10 rounded-full bg-black bg-opacity-50 flex items-center justify-center">
+                    <i class="fas fa-volume-up text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slang Definition Card -->
+    <div class="p-4 bg-gray-900">
+        <div class="bg-gradient-to-r from-purple-800 to-pink-700 rounded-xl p-4">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-2xl font-bold text-white">serving</h2>
+                <div class="flex space-x-1">
+                    <button class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                        <i class="fas fa-bookmark text-white text-sm"></i>
+                    </button>
+                    <button class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                        <i class="fas fa-share-alt text-white text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <p class="text-white text-opacity-90 text-sm mb-3">Looking exceptionally good or presentable; delivering an impressive appearance or performance.</p>
+            
+            <div class="mb-3">
+                <div class="text-xs text-white text-opacity-70 mb-1">Example:</div>
+                <p class="text-white text-sm italic">"That outfit is <span class="font-bold text-pink-300">serving</span> major celebrity vibes!"</p>
+            </div>
+            
+            <div class="flex space-x-2">
+                <span class="px-2 py-1 bg-white bg-opacity-20 rounded-full text-xs text-white">Fashion</span>
+                <span class="px-2 py-1 bg-white bg-opacity-20 rounded-full text-xs text-white">Social</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reaction Bar -->
+    <div class="p-4 pb-20 bg-gray-900">
+        <div class="flex justify-between">
+            <button class="flex-1 flex flex-col items-center justify-center">
+                <i class="fas fa-lightbulb text-yellow-400 text-xl mb-1"></i>
+                <span class="text-xs text-white opacity-80">Got it!</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center justify-center">
+                <i class="fas fa-microphone text-pink-400 text-xl mb-1"></i>
+                <span class="text-xs text-white opacity-80">Snap it</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center justify-center">
+                <i class="fas fa-redo text-blue-400 text-xl mb-1"></i>
+                <span class="text-xs text-white opacity-80">Again</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center justify-center">
+                <i class="fas fa-forward text-purple-400 text-xl mb-1"></i>
+                <span class="text-xs text-white opacity-80">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="tab-item active">
+            <i class="fas fa-play"></i>
+            <span>Learn</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-microphone"></i>
+            <span>Voice</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-book"></i>
+            <span>Stash</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </div>
+</body>
+</html>

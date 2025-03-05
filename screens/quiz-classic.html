@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Classic Mode | Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="classic-mode h-full flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-gray-50 h-7 flex justify-center items-center border-b border-gray-200">
+        <div class="text-gray-900 text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Header -->
+    <div class="bg-white p-3 flex justify-between items-center shadow-sm border-b border-gray-100">
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="text-gray-800 font-medium">Business Idioms Quiz</div>
+        <div class="w-8 h-8"></div> <!-- Placeholder for symmetry -->
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="p-3 bg-white border-b border-gray-100">
+        <div class="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Question 3 of 10</span>
+            <span>Professional Communication</span>
+        </div>
+        <div class="h-1.5 bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-1.5 bg-blue-600 rounded-full" style="width: 30%"></div>
+        </div>
+    </div>
+
+    <!-- Quiz Content -->
+    <div class="flex-1 p-4 pb-20 overflow-y-auto">
+        <!-- Question -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5 mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-2 text-center">What does the idiom "on the ball" mean?</h2>
+            <p class="text-sm text-gray-500 mb-6 text-center">Select the correct definition</p>
+            
+            <div class="space-y-3">
+                <div class="border border-gray-200 p-3 rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center mr-3">
+                            <span class="text-gray-600">A</span>
+                        </div>
+                        <span class="text-gray-800">Having physical possession of something</span>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border border-blue-200 p-3 rounded-lg cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <span class="text-blue-700">B</span>
+                        </div>
+                        <span class="text-gray-800 font-medium">Alert, attentive, and efficient</span>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 p-3 rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center mr-3">
+                            <span class="text-gray-600">C</span>
+                        </div>
+                        <span class="text-gray-800">Under pressure to perform well</span>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 p-3 rounded-lg hover:bg-gray-50 transition cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center mr-3">
+                            <span class="text-gray-600">D</span>
+                        </div>
+                        <span class="text-gray-800">In a difficult situation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+            <div class="flex items-start mb-4">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg mr-3 mt-1">
+                    🎯
+                </div>
+                <div>
+                    <h3 class="text-base font-semibold text-gray-800 mb-1">Example Usage</h3>
+                    <p class="text-sm text-gray-600">"Sarah is always <span class="text-blue-600 font-semibold">on the ball</span> with her project deadlines."</p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center">
+                <button class="flex items-center bg-gray-100 text-gray-700 text-sm py-2 px-3 rounded">
+                    <i class="fas fa-volume-up mr-2 text-blue-600"></i>
+                    Play Audio
+                </button>
+                <button class="flex items-center bg-gray-100 text-gray-700 text-sm py-2 px-3 rounded">
+                    <i class="fas fa-info-circle mr-2 text-blue-600"></i>
+                    More Examples
+                </button>
+            </div>
+        </div>
+
+        <!-- Answer Feedback - Only show after selection -->
+        <div class="bg-green-50 rounded-lg border border-green-200 p-4 mb-6">
+            <div class="flex items-center mb-2">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-check text-green-600"></i>
+                </div>
+                <h3 class="text-base font-semibold text-green-800">Correct!</h3>
+            </div>
+            <p class="text-sm text-gray-700 mb-3">"On the ball" describes someone who is alert, attentive, and doing their job efficiently. It likely comes from sports, where being "on the ball" meant being focused on the game.</p>
+            <div class="flex justify-between items-center text-sm">
+                <div class="flex items-center">
+                    <i class="fas fa-check-double mr-1 text-blue-600"></i>
+                    <span class="text-gray-600">3 correct answers in a row</span>
+                </div>
+                <span class="text-blue-700 font-medium">+10 points</span>
+            </div>
+        </div>
+        
+        <!-- Usage Tips -->
+        <div class="bg-blue-50 rounded-lg border border-blue-100 p-4 mb-6">
+            <h3 class="text-base font-semibold text-gray-800 mb-2">Usage Tips</h3>
+            <ul class="text-sm text-gray-700 space-y-2">
+                <li class="flex items-start">
+                    <i class="fas fa-check text-blue-600 mr-2 mt-1"></i>
+                    <span>Use this idiom to compliment someone's alertness and efficiency</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-blue-600 mr-2 mt-1"></i>
+                    <span>Common in workplace contexts to praise attentiveness</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-blue-600 mr-2 mt-1"></i>
+                    <span>Can be used in both formal and informal settings</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Actions -->
+        <div class="flex space-x-3">
+            <button class="flex-1 border border-gray-300 text-gray-700 py-2 rounded font-medium">
+                Review
+            </button>
+            <button class="flex-1 bg-blue-600 text-white py-2 rounded font-medium">
+                Continue
+            </button>
+        </div>
+    </div>
+
+    <!-- Help Bar -->
+    <div class="fixed bottom-20 right-4">
+        <button class="w-10 h-10 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center">
+            <i class="fas fa-question text-blue-600"></i>
+        </button>
+    </div>
+</body>
+</html>

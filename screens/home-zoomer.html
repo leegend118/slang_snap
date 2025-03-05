@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Zoomer Mode | Slang Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+    <style>
+        .zoomer-mode {
+            background-color: #111827;
+            color: white;
+        }
+        
+        .streak-bar {
+            height: 4px;
+            background: rgb(236,72,153);
+            background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+        }
+        
+        .card {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px #ec4899, 0 0 10px #ec4899, 0 0 15px #ec4899;
+        }
+        
+        .tag {
+            background: rgba(236, 72, 153, 0.2);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+        }
+    </style>
+</head>
+<body class="zoomer-mode h-full flex flex-col">
+    <!-- iOS Status Bar Substitute -->
+    <div class="bg-black bg-opacity-80 h-7 flex justify-center items-center">
+        <div class="text-white text-xs font-medium">9:41</div>
+    </div>
+
+    <!-- Header -->
+    <div class="p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                <img src="https://i.pravatar.cc/100?img=33" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-white">Hey, Kai!</h1>
+                <div class="flex items-center">
+                    <span class="text-xs text-gray-400">Level 28</span>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full mx-2"></div>
+                    <span class="text-xs text-pink-400">+280 XP today</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3">
+            <div class="relative">
+                <i class="fas fa-bell text-white text-xl"></i>
+                <div class="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full"></div>
+            </div>
+            <button class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                <i class="fas fa-cog text-white"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Streak Bar -->
+    <div class="px-4 mb-5">
+        <div class="bg-gray-800 rounded-lg overflow-hidden">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center mr-3 shadow-lg">
+                        <i class="fas fa-fire text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <h2 class="text-xl font-bold text-white mr-2">68-Day Streak!</h2>
+                            <i class="fas fa-bolt text-yellow-400"></i>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-sm text-gray-300">Only</span>
+                            <span class="text-sm text-pink-400 font-bold mx-1">4 days</span>
+                            <span class="text-sm text-gray-300">until new badge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-3 bg-gray-900 flex justify-between items-center border-t border-gray-700">
+                <div class="flex space-x-1">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
+                        <span class="text-white text-xs font-medium">M</span>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
+                        <span class="text-white text-xs font-medium">T</span>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
+                        <span class="text-white text-xs font-medium">W</span>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white bg-opacity-10 flex items-center justify-center relative">
+                        <span class="text-white text-xs font-medium">T</span>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white bg-opacity-10 flex items-center justify-center">
+                        <span class="text-white text-opacity-50 text-xs font-medium">F</span>
+                    </div>
+                </div>
+                <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-sm py-2 px-4 rounded-lg shadow-lg">
+                    <i class="fas fa-play mr-1"></i> Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daily Goal -->
+    <div class="px-4 mb-5">
+        <div class="flex justify-between items-center mb-3">
+            <h2 class="text-white font-bold text-lg">Today's Goals</h2>
+            <span class="text-pink-400 text-sm">2/3 Completed</span>
+        </div>
+        
+        <div class="bg-gray-800 rounded-lg p-4">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-md bg-green-900 flex items-center justify-center text-lg mr-3">
+                    ✅
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between">
+                        <h3 class="text-white font-medium">Complete Daily Quiz</h3>
+                        <span class="text-green-400 text-sm">+25 XP</span>
+                    </div>
+                    <p class="text-gray-400 text-xs">5/5 questions answered</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-md bg-green-900 flex items-center justify-center text-lg mr-3">
+                    ✅
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between">
+                        <h3 class="text-white font-medium">Record Voice Snap</h3>
+                        <span class="text-green-400 text-sm">+15 XP</span>
+                    </div>
+                    <p class="text-gray-400 text-xs">Practiced "no cap" pronunciation</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-md bg-gray-700 flex items-center justify-center text-lg mr-3">
+                    📱
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between">
+                        <h3 class="text-white font-medium">Watch Slang in Action</h3>
+                        <span class="text-gray-400 text-sm">+20 XP</span>
+                    </div>
+                    <p class="text-gray-400 text-xs">Watch a video with "rent free" usage</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Word of the Day -->
+    <div class="px-4 mb-5">
+        <div class="flex justify-between items-center mb-3">
+            <h2 class="text-white font-bold text-lg">Today's Slang</h2>
+            <div class="flex items-center">
+                <i class="fas fa-calendar-alt text-pink-400 mr-1"></i>
+                <span class="text-gray-400 text-xs">Apr 15</span>
+            </div>
+        </div>
+        
+        <div class="card rounded-xl p-0 overflow-hidden">
+            <div class="gradient-bg p-4 flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-white bg-opacity-20 flex items-center justify-center text-2xl mr-3 shadow-lg">
+                        🧠
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">rent free</h3>
+                        <div class="flex flex-wrap gap-1 mt-1">
+                            <span class="tag text-xs text-pink-300 px-2 py-0.5 rounded-full">Social Media</span>
+                            <span class="tag text-xs text-pink-300 px-2 py-0.5 rounded-full">Expression</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end">
+                    <div class="bg-white bg-opacity-20 px-2 py-0.5 rounded-lg mb-1">
+                        <span class="text-xs text-white">🔥 Trending</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4">
+                <div class="mb-4">
+                    <h4 class="text-sm text-gray-400 mb-1">Definition:</h4>
+                    <p class="text-white">When someone or something is constantly on your mind without paying "rent" - you can't stop thinking about it.</p>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="text-sm text-gray-400 mb-1">Example:</h4>
+                    <div class="bg-gray-800 rounded-lg p-3 flex items-start">
+                        <i class="fas fa-quote-left text-pink-400 mr-2 mt-1"></i>
+                        <p class="text-white text-sm">"That song is living <span class="text-pink-400 font-medium">rent free</span> in my head all week."</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-gray-700 text-white py-2 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-volume-up mr-2"></i>
+                        Listen
+                    </button>
+                    <button class="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 rounded-lg font-medium">
+                        Practice Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="mb-6">
+        <div class="px-4 flex justify-between items-center mb-3">
+            <h2 class="text-white font-bold text-lg">Categories</h2>
+            <a href="#" class="text-pink-400 text-sm">View All</a>
+        </div>
+        
+        <div class="flex overflow-x-auto pb-1 px-4 space-x-3">
+            <div class="card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center text-2xl mb-2">
+                    📱
+                </div>
+                <h3 class="text-white text-sm font-medium">Social Media</h3>
+                <p class="text-gray-400 text-xs mt-1">28 terms</p>
+            </div>
+            
+            <div class="card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-2xl mb-2">
+                    🎮
+                </div>
+                <h3 class="text-white text-sm font-medium">Gaming</h3>
+                <p class="text-gray-400 text-xs mt-1">35 terms</p>
+            </div>
+            
+            <div class="card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center text-2xl mb-2">
+                    🎵
+                </div>
+                <h3 class="text-white text-sm font-medium">Music</h3>
+                <p class="text-gray-400 text-xs mt-1">42 terms</p>
+            </div>
+            
+            <div class="card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center mr-3">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-yellow-600 to-orange-600 flex items-center justify-center text-2xl mb-2">
+                    🏫
+                </div>
+                <h3 class="text-white text-sm font-medium">School</h3>
+                <p class="text-gray-400 text-xs mt-1">24 terms</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Friends Activity -->
+    <div class="mb-10">
+        <div class="px-4 flex justify-between items-center mb-3">
+            <h2 class="text-white font-bold text-lg">Friend Activity</h2>
+            <a href="#" class="text-pink-400 text-sm">See All</a>
+        </div>
+        
+        <div class="px-4 space-y-3">
+            <div class="card rounded-lg p-3 flex items-center">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-3">
+                    <img src="https://i.pravatar.cc/100?img=29" alt="Friend" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between">
+                        <h3 class="text-white font-medium">Alex T.</h3>
+                        <span class="text-gray-400 text-xs">2h ago</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Mastered <span class="text-pink-400 font-medium">Gaming Slang</span> course</p>
+                </div>
+                <button class="ml-2 w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                    <i class="fas fa-chevron-right text-white text-xs"></i>
+                </button>
+            </div>
+            
+            <div class="card rounded-lg p-3 flex items-center">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-3">
+                    <img src="https://i.pravatar.cc/100?img=23" alt="Friend" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between">
+                        <h3 class="text-white font-medium">Emma K.</h3>
+                        <span class="text-gray-400 text-xs">5h ago</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Recorded <span class="text-pink-400 font-medium">3 Voice Snaps</span></p>
+                </div>
+                <button class="ml-2 w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                    <i class="fas fa-chevron-right text-white text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-play"></i>
+            <span>Learn</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-microphone"></i>
+            <span>Voice</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-book"></i>
+            <span>Stash</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </div>
+</body>
+</html>
