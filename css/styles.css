@@ -43,12 +43,9 @@
     z-index: 10;
 }
 
+/* Remove the automatic time display */
 .status-bar::before {
-    content: '9:41';
-    font-weight: 600;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    content: '';
 }
 
 .status-bar::after {
